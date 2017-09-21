@@ -1,54 +1,49 @@
-<!-- This is a static file -->
-<!-- served from your routes in server.js -->
+<script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
+<script src="https://cdn.rawgit.com/Sean-Bradley/objVertexColors/d0bd3e96/OBJVertexColorLoader.js"></script>
+<script>
+  AFRAME.registerComponent('obj-vertex', {
+    schema: { type: 'string' },
+    init: function () {
+      this.model = null;
+      this.objLoader = new THREE.OBJVertexColorLoader();
+    },
+    update: function () {
+      var data = this.data;
+      this.remove();
+      this.loadObj(data);
+    },
+    remove: function () {
+      if (!this.model) { return; }
+      this.el.removeObject3D('mesh');
+    },
+    loadObj: function (objUrl) {
+      var self = this;
+      var el = this.el;
+      var objLoader = this.objLoader;
+      objLoader.load(objUrl, function (objModel) {
+        self.model = objModel;
+        el.setObject3D('mesh', objModel);
+        el.emit('model-loaded', {format: 'obj', model: objModel});
+      });
+    }
+  });
+</script>
+<script src="aframe-ar.js"></script>
+<body style='margin : 0px; overflow: hidden;'>
+  
+ <a-scene embedded arjs='sourceType: webcam;'>
+ <!-- <a-scene> -->
+      <!-- <a-entity obj-model="obj: #ron-obj; mtl: #ron-mtl"></a-entity> -->
+      
+      <a-box position='0 0.5 0' material='opacity: 0.05; side: double'>
+          <!-- <a-torus-knot radius='0.26' radius-tubular='0.05'>
+          </a-torus-knot> -->
+          <a-entity obj-vertex="ron1.obj" scale="0.005 0.005 0.005" position="0.5 -0.5 -0.5" rotation="-90 180 0"></a-entity>
+      </a-box>
 
-<!-- You might want to try something fancier: -->
-<!-- html/nunjucks docs: https://mozilla.github.io/nunjucks/ -->
-<!-- pug: https://pugjs.org/ -->
-<!-- haml: http://haml.info/ -->
-<!-- hbs(handlebars): http://handlebarsjs.com/ -->
-
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Welcome to Glitch!</title>
-    <meta name="description" content="A cool thing made with Glitch">
-    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/style.css">
-  </head>
-  <body>
-    <header>
-      <h1>
-        A Dream of the Future
-      </h1>
-    </header>
-
-    <main>
-      <p class="bold">Oh hi,</p>
-      <p>Tell me your hopes and dreams:</p>
-      <form>
-        <input type="text" maxlength="100" placeholder="Dreams!">
-        <button type="submit">Submit</button>
-      </form>
-      <section class="dreams">
-        <ul id="dreams">
-        </ul>
-      </section>
-    </main>
-
-    <footer>
-      <a href="https://glitch.com">
-        Remix this in Glitch
-      </a>
-    </footer>
-
-    <!-- Your web-app is https, so your scripts need to be too -->
-    <script src="https://code.jquery.com/jquery-2.2.1.min.js"
-            integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="
-            crossorigin="anonymous"></script>
-    <script src="/client.js"></script>
-
-  </body>
-</html>
+      <a-marker-camera type='pattern' url='ron-marker.patt'></a-marker-camera>
+    <!-- <a-marker-camera type='pattern' url='rondagdag-marker.patt'></a-marker-camera> -->
+    <!-- <a-marker-camera type='pattern' url='https://raw.githubusercontent.com/alwell-kevin/yes/master/vonage-marker.patt'>
+    </a-marker-camera> -->
+	</a-scene>
+</body>
