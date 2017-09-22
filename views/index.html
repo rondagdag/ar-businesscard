@@ -1,51 +1,25 @@
 <script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
 <script src="https://cdn.rawgit.com/Sean-Bradley/objVertexColors/d0bd3e96/OBJVertexColorLoader.js"></script>
-<script>
-  AFRAME.registerComponent('obj-vertex', {
-    schema: { type: 'string' },
-    init: function () {
-      this.model = null;
-      this.objLoader = new THREE.OBJVertexColorLoader();
-    },
-    update: function () {
-      var data = this.data;
-      this.remove();
-      this.loadObj(data);
-    },
-    remove: function () {
-      if (!this.model) { return; }
-      this.el.removeObject3D('mesh');
-    },
-    loadObj: function (objUrl) {
-      var self = this;
-      var el = this.el;
-      var objLoader = this.objLoader;
-      objLoader.load(objUrl, function (objModel) {
-        self.model = objModel;
-        el.setObject3D('mesh', objModel);
-        el.emit('model-loaded', {format: 'obj', model: objModel});
-      });
-    }
-  });
-</script>
+<script src="obj-vertex.js"></script>
 <script src="aframe-ar.js"></script>
 <body style='margin : 0px; overflow: hidden;'>
   
  <a-scene embedded arjs='sourceType: webcam;'>
  <!-- <a-scene> -->
       <!-- <a-entity obj-model="obj: #ron-obj; mtl: #ron-mtl"></a-entity> -->
-      
-      <a-box position='0 0.5 0' material='opacity: 0.01; side: double'>
+      <a-entity>
+      <a-box position='0 0.5 0' material='opacity: 0.05; side: double'>
           <!-- <a-torus-knot radius='0.26' radius-tubular='0.05'>
           </a-torus-knot> -->
-            <a-entity obj-vertex="ron1.obj" scale="0.005 0.005 0.005" position="0.5 0.5 -0.25" rotation="180 180 0">
-            </a-entity>
-          <a-animation attribute="rotation"
-          dur="3000"
-          to="0 360 0"
-          easing="linear"
-          repeat="indefinite"></a-animation>
+          <a-entity obj-vertex="ron1.obj" scale="0.005 0.005 0.005" position="0.5 0.5 -0.25" rotation="180 180 0">
+          </a-entity>
       </a-box>
+      <a-animation attribute="rotation"
+      dur="3000"
+      to="0 360 0"
+      easing="linear"
+      repeat="indefinite"></a-animation>
+    </a-entity>
 
       <a-marker-camera type='pattern' url='ron-marker.patt'></a-marker-camera>
     <!-- <a-marker-camera type='pattern' url='rondagdag-marker.patt'></a-marker-camera> -->
