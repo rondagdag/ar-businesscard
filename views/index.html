@@ -1,16 +1,24 @@
-<script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
-<script src="https://cdn.rawgit.com/Sean-Bradley/objVertexColors/d0bd3e96/OBJVertexColorLoader.js"></script>
-<script src="obj-vertex.js"></script>
-<script src="aframe-ar.js"></script>
+<script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+<script src="js/camera-position.js"></script>
+<script src="js/link-controls.js"></script>
+<script src="js/OBJVertexColorLoader.js"></script>
+<script src="js/obj-vertex.js"></script>
+<!-- <script src="js/aframe-ar.js"></script> -->
 <body style='margin : 0px; overflow: hidden;'>
   
- <a-scene embedded arjs='sourceType: webcam;'>
- <!-- <a-scene> -->
+ <!-- <a-scene embedded arjs='sourceType: webcam;'> -->
+<!-- <a-scene embedded arjs='sourceType: webcam;' raycaster="far: 100; objects: [link];" cursor="rayOrigin: mouse" > -->
+        
+  <a-scene raycaster="far: 100; objects: [link];" cursor="rayOrigin: mouse" camera-position>
       <!-- <a-entity obj-model="obj: #ron-obj; mtl: #ron-mtl"></a-entity> -->
+      <a-assets>
+        <img id="arena" crossOrigin="anonymous" src="https://cdn.aframe.io/link-traversal/aframeArena.png">
+        <img id="thumbCity" crossOrigin="anonymous" src="https://cdn.aframe.io/link-traversal/thumbs/city.png">
+        <img id="thumbSunrise" crossOrigin="anonymous" src="https://cdn.aframe.io/link-traversal/thumbs/sunrise.png">
+        <img id="thumbMountains" crossOrigin="anonymous" src="https://cdn.aframe.io/link-traversal/thumbs/mountains.png">
+      </a-assets>
       <a-entity>
       <a-box position='0 0.5 0' material='opacity: 0.05; side: double'>
-          <!-- <a-torus-knot radius='0.26' radius-tubular='0.05'>
-          </a-torus-knot> -->
           <a-entity obj-vertex="ron1.obj" scale="0.005 0.005 0.005" position="0.5 0.5 -0.25" rotation="180 180 0">
           </a-entity>
       </a-box>
@@ -20,10 +28,17 @@
       easing="linear"
       repeat="indefinite"></a-animation>
     </a-entity>
-
+    <!-- <a-link position="0 1 -1.5" href="http://ron.dagdag.net" title="My Homepage" image="#homeThumbnail"> -->
+      <a-link href="http://www.dagdag.net" position="-3 1.5 -1" image="#thumbCity" geometry="primitive:circle;segments:64" material="pano:https://cdn.aframe.io/link-traversal/thumbs/city.png;shader:portal;side:double" link=""><a-entity text="width:5;color:white;align:center;font:kelsonsans;value:http://www.dagdag.net" position="0 1.5 0"></a-entity><a-entity geometry="primitive:sphere;segmentsWidth:64;segmentsHeight:64;phiLength:180;thetaLength:360" material="shader:portal;borderEnabled:0;pano:[object HTMLImageElement];side:back" rotation="0 180 0" visible="false"></a-entity><a-entity geometry="primitive:sphere;radius:10;segmentsWidth:64;segmentsHeight:64" material="shader:portal;borderEnabled:0;pano:[object HTMLImageElement];side:back" visible="false"></a-entity></a-link>
+      <a-link href="http://ron.dagdag.net" position="-1 1.5 -1" image="#thumbSunrise" geometry="primitive:circle;segments:64" material="pano:https://cdn.aframe.io/link-traversal/thumbs/sunrise.png;shader:portal;side:double" link=""><a-entity text="width:5;color:white;align:center;font:kelsonsans;value:http://ron.dagdag.net" position="0 1.5 0"></a-entity><a-entity geometry="primitive:sphere;segmentsWidth:64;segmentsHeight:64;phiLength:180;thetaLength:360" material="shader:portal;borderEnabled:0;pano:[object HTMLImageElement];side:back" rotation="0 180 0" visible="false"></a-entity><a-entity geometry="primitive:sphere;radius:10;segmentsWidth:64;segmentsHeight:64" material="shader:portal;borderEnabled:0;pano:[object HTMLImageElement];side:back" visible="false"></a-entity></a-link>
+      <a-link href="mailto:ron@dagdag.net" position="1 1.5 -1" image="#thumbMountains" geometry="primitive:circle;segments:64" material="pano:https://cdn.aframe.io/link-traversal/thumbs/mountains.png;shader:portal;side:double" link=""><a-entity text="width:5;color:white;align:center;font:kelsonsans;value:mailto:ron@dagdag.net" position="0 1.5 0"></a-entity><a-entity geometry="primitive:sphere;segmentsWidth:64;segmentsHeight:64;phiLength:180;thetaLength:360" material="shader:portal;borderEnabled:0;pano:[object HTMLImageElement];side:back" rotation="0 180 0" visible="false"></a-entity><a-entity geometry="primitive:sphere;radius:10;segmentsWidth:64;segmentsHeight:64" material="shader:portal;borderEnabled:0;pano:[object HTMLImageElement];side:back" visible="false"></a-entity></a-link>
+      <a-link href="tel:+18174588885" position="3 1.5 -1" image="#thumbMountains" geometry="primitive:circle;segments:64" material="pano:https://cdn.aframe.io/link-traversal/thumbs/mountains.png;shader:portal;side:double" link=""><a-entity text="width:5;color:white;align:center;font:kelsonsans;value:tel:+18174588885" position="0 1.5 0"></a-entity><a-entity geometry="primitive:sphere;segmentsWidth:64;segmentsHeight:64;phiLength:180;thetaLength:360" material="shader:portal;borderEnabled:0;pano:[object HTMLImageElement];side:back" rotation="0 180 0" visible="false"></a-entity><a-entity geometry="primitive:sphere;radius:10;segmentsWidth:64;segmentsHeight:64" material="shader:portal;borderEnabled:0;pano:[object HTMLImageElement];side:back" visible="false"></a-entity></a-link>
       <a-marker-camera type='pattern' url='ron-marker.patt'></a-marker-camera>
     <!-- <a-marker-camera type='pattern' url='rondagdag-marker.patt'></a-marker-camera> -->
-    <!-- <a-marker-camera type='pattern' url='https://raw.githubusercontent.com/alwell-kevin/yes/master/vonage-marker.patt'>
+    <!-- <a-marker-camera type='pa
+      ttern' url='https://raw.githubusercontent.com/alwell-kevin/yes/master/vonage-marker.patt'>
     </a-marker-camera> -->
+    <!-- <a-entity id="leftHand" link-controls="hand: left"></a-entity> -->
+    <!-- <a-entity id="rightHand" link-controls="hand: right"></a-entity> -->
 	</a-scene>
 </body>
