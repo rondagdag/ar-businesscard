@@ -1,0 +1,37 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    <script src="js/camera-position.js"></script>
+    <script src="js/link-controls.js"></script>
+    <script src="js/aframe-ar.js"></script>
+    </head><body style="margin: -150.5px 0px 0px; overflow: hidden; width: 1280px; height: 960px;" class="">
+      
+     <!-- <a-scene embedded arjs='sourceType: webcam;'> -->
+    <a-scene arjs="sourceType: webcam;" raycaster="origin:3.1654580197204223 5.696376624151102 -0.5763789047685955;direction:-0.6349207457081608 -0.7252681937862564 0.26619859832729037;useWorldCoordinates:true;far:100;objects:[link]" cursor="rayOrigin:mouse" class="fullscreen" inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="" aframe-inspector-removed-embedded="undefined"><canvas class="a-canvas" data-aframe-canvas="true" width="600" height="300"></canvas>
+            
+      <!-- <a-scene raycaster="far: 100; objects: [link];" cursor="rayOrigin: mouse" camera-position> -->
+          <!-- <a-entity obj-model="obj: #ron-obj; mtl: #ron-mtl"></a-entity> -->
+          <a-assets>
+            <img id="hackster" crossorigin="anonymous" src="thumb-hackster.png">
+            <img id="thumbCity" crossorigin="anonymous" src="https://cdn.aframe.io/link-traversal/thumbs/city.png">
+            <img id="thumbSunrise" crossorigin="anonymous" src="https://cdn.aframe.io/link-traversal/thumbs/sunrise.png">
+            <img id="thumbMountains" crossorigin="anonymous" src="https://cdn.aframe.io/link-traversal/thumbs/mountains.png">
+          </a-assets>
+          
+        <a-link href="http://www.dagdag.net" position="-0.75 0 0" rotation="270 0 0" scale="0.25 0.25 0.25" geometry="primitive:circle;segments:64" material="shader:portal;side:double" link="">
+                <a-image src="#hackster" position="0 0 0.02" material="" geometry=""></a-image>
+        <a-entity text="width:5;color:white;align:center;font:kelsonsans;value:http://www.dagdag.net" position="0 1.5 0" rotation="0 180 0"></a-entity><a-entity geometry="primitive:sphere;segmentsWidth:64;segmentsHeight:64;phiLength:180;thetaLength:360" material="shader:portal;borderEnabled:0;side:back" rotation="0 180 0" visible="false"></a-entity><a-entity geometry="primitive:sphere;radius:10;segmentsWidth:64;segmentsHeight:64" material="shader:portal;borderEnabled:0;side:back" visible="false"></a-entity></a-link>
+        <a-link href="http://ron.dagdag.net" position="-0.45 0 -1" rotation="270 0 0" scale="0.25 0.25 0.25" geometry="primitive:circle;segments:64" material="shader:portal;side:double" link="">
+          <a-image src="#hackster" position="0 0 0.02" material="" geometry=""></a-image>
+        <a-entity text="width:5;color:white;align:center;font:kelsonsans;value:http://ron.dagdag.net" position="0 1.5 0"></a-entity><a-entity geometry="primitive:sphere;segmentsWidth:64;segmentsHeight:64;phiLength:180;thetaLength:360" material="shader:portal;borderEnabled:0;side:back" rotation="0 180 0" visible="false"></a-entity><a-entity geometry="primitive:sphere;radius:10;segmentsWidth:64;segmentsHeight:64" material="shader:portal;borderEnabled:0;side:back" visible="false"></a-entity></a-link>
+        <a-link href="mailto:ron@dagdag.net" position="0.45 0 -1" rotation="270 0 0" scale="0.25 0.25 0.25" geometry="primitive:circle;segments:64" material="shader:portal;side:double" link="">
+          <a-image src="#hackster" position="0 0 0.02" material="" geometry=""></a-image>
+        <a-entity text="width:5;color:white;align:center;font:kelsonsans;value:mailto:ron@dagdag.net" position="0 1.5 0"></a-entity><a-entity geometry="primitive:sphere;segmentsWidth:64;segmentsHeight:64;phiLength:180;thetaLength:360" material="shader:portal;borderEnabled:0;side:back" rotation="0 180 0" visible="false"></a-entity><a-entity geometry="primitive:sphere;radius:10;segmentsWidth:64;segmentsHeight:64" material="shader:portal;borderEnabled:0;side:back" visible="false"></a-entity></a-link>
+        <a-link href="tel:+18174588885" position="0.75 0 0" rotation="270 0 0" scale="0.25 0.25 0.25" geometry="primitive:circle;segments:64" material="shader:portal;side:double" link="">
+          <a-image src="#hackster" position="0 0 0.02" material="" geometry=""></a-image>
+        <a-entity text="width:5;color:white;align:center;font:kelsonsans;value:tel:+18174588885" position="0 1.5 0" rotation="0 180 0"></a-entity><a-entity geometry="primitive:sphere;segmentsWidth:64;segmentsHeight:64;phiLength:180;thetaLength:360" material="shader:portal;borderEnabled:0;side:back" rotation="0 180 0" visible="false"></a-entity><a-entity geometry="primitive:sphere;radius:10;segmentsWidth:64;segmentsHeight:64" material="shader:portal;borderEnabled:0;side:back" visible="false"></a-entity></a-link>
+        
+        <a-marker-camera type="pattern" url="ron-marker.patt" material="" arjs-anchor="" camera="" data-aframe-inspector-original-camera=""></a-marker-camera>
+    
+        <!-- <a-entity id="leftHand" link-controls="hand: left"></a-entity> -->
+        <!-- <a-entity id="rightHand" link-controls="hand: right"></a-entity> -->
+        </a-scene>
+    <div id="arjsDebugUIContainer" style="position: fixed; bottom: 10px; width:100%; text-align: center; z-index: 1;color: grey;"><div style="color: rgba(0, 0, 0, 0.9); background-color: rgba(127, 127, 127, 0.5); display: inline-block; padding: 0.5em; margin: 0.5em; text-align: left;"><span style="display: block;"><b>trackingBackend</b> : artoolkit</span><a target="_blank" href="https://webxr.io/augmented-website?http://localhost:61476/" style="display: block;">Share on augmented-websites</a></div><div style="color: rgba(0, 0, 0, 0.9); background-color: rgba(127, 127, 127, 0.5); display: inline-block; padding: 0.5em; margin: 0.5em; text-align: left;"><span style="display: block;"><b>markersAreaEnabled</b> :false</span></div></div><span id="buffer-extension-hover-button" style="display: none; position: absolute; z-index: 8675309; width: 100px; height: 25px; background-image: url(&quot;chrome-extension://noojglkidnpfjbincgijbaiedldjfbhh/data/shared/img/buffer-hover-icon@2x.png&quot;); background-size: 100px 25px; opacity: 0.9; cursor: pointer;"></span><video autoplay="" muted="" playsinline="" style="width: 1280px; height: 960px; position: absolute; top: 0px; left: 0px; z-index: -2; margin-left: 0px; margin-top: -150.5px;"></video></body></html>
