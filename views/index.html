@@ -10,23 +10,23 @@
   <!-- <a-scene raycaster="far: 100; objects: [link];" cursor="rayOrigin: mouse" camera-position> -->
       <!-- <a-entity obj-model="obj: #ron-obj; mtl: #ron-mtl"></a-entity> -->
       <a-assets>
-        <img id="hackster" crossOrigin="anonymous" src="thumb-hackster.png">
-        <img id="thumbCity" crossOrigin="anonymous" src="https://cdn.aframe.io/link-traversal/thumbs/city.png">
-        <img id="thumbSunrise" crossOrigin="anonymous" src="https://cdn.aframe.io/link-traversal/thumbs/sunrise.png">
-        <img id="thumbMountains" crossOrigin="anonymous" src="https://cdn.aframe.io/link-traversal/thumbs/mountains.png">
+        <img id="hackster" crossOrigin="anonymous" src="hackster-logo.png">
+        <img id="linkedin" crossOrigin="anonymous" src="linkedin-logo.png">
+        <img id="mvp" crossOrigin="anonymous" src="mvp-logo.png">
+        <img id="twitter" crossOrigin="anonymous" src="twitter-logo.png">
       </a-assets>
       
     <a-link href="http://www.dagdag.net" position="-0.75 0 0" rotation="270 0 0" scale="0.25 0.25 0.25" geometry="primitive:circle;segments:64" material="shader:portal;side:double" link="">
             <a-image src="#hackster" position="0 0 0.01" material="" geometry=""></a-image>
     </a-link>
     <a-link href="http://ron.dagdag.net" position="-0.45 0 -1" rotation="270 0 0" scale="0.25 0.25 0.25" geometry="primitive:circle;segments:64" material="shader:portal;side:double" link="">
-      <a-image src="#hackster" position="0 0 0.01" material="" geometry=""></a-image>
+      <a-image src="#linkedin" position="0 0 0.01" material="" geometry=""></a-image>
     </a-link>
-    <a-link href="mailto:ron@dagdag.net" position="0.45 0 -1" rotation="270 0 0" scale="0.25 0.25 0.25" geometry="primitive:circle;segments:64" material="shader:portal;side:double" link="">
-      <a-image src="#hackster" position="0 0 0.01" material="" geometry=""></a-image>
+    <a-link href="https://mvp.microsoft.com/en-us/PublicProfile/5002483" position="0.45 0 -1" rotation="270 0 0" scale="0.25 0.25 0.25" geometry="primitive:circle;segments:64" material="shader:portal;side:double" link="">
+      <a-image src="#mvp" position="0 0 0.01" material="" geometry=""></a-image>
     </a-link>
-    <a-link href="tel:+18174588885" position="0.75 0 0" rotation="270 0 0" scale="0.25 0.25 0.25" geometry="primitive:circle;segments:64" material="shader:portal;side:double" link="">
-      <a-image src="#hackster" position="0 0 0.01" material="" geometry=""></a-image>
+    <a-link href="https://twitter.com/rondagdag" position="0.75 0 0" rotation="270 0 0" scale="0.25 0.25 0.25" geometry="primitive:circle;segments:64" material="shader:portal;side:double" link="">
+      <a-image src="#twitter" position="0 0 0.01" material="" geometry=""></a-image>
     </a-link>
     
     <a-marker-camera type='pattern' url='ron-marker.patt'></a-marker-camera>
