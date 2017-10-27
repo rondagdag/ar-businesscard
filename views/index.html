@@ -17,16 +17,48 @@
       </a-assets>
       
     <a-link href="http://www.dagdag.net" position="-0.75 0 0" rotation="270 0 0" scale="0.25 0.25 0.25" geometry="primitive:circle;segments:64" material="shader:portal;side:double" link="">
-            <a-image src="#hackster" position="0 0 0.01" material="" geometry=""></a-image>
+      <a-entity position="0 0 0.5" rotation="90 0 0">
+        <a-image src="#hackster" position="0 0 0.01" material="" geometry="">
+        <a-animation attribute="rotation"
+        dur="10000"
+        fill="forwards"
+        to="0 360 0"
+        repeat="indefinite"></a-animation>
+      </a-image>
+      </a-entity>
     </a-link>
     <a-link href="http://ron.dagdag.net" position="-0.45 0 -1" rotation="270 0 0" scale="0.25 0.25 0.25" geometry="primitive:circle;segments:64" material="shader:portal;side:double" link="">
-      <a-image src="#linkedin" position="0 0 0.01" material="" geometry=""></a-image>
+      <a-entity position="0 0 0.5" rotation="90 0 0">
+          <a-image src="#linkedin" position="0 0 0.01" material="" geometry="">
+          <a-animation attribute="rotation"
+          dur="10000"
+          fill="forwards"
+          to="0 360 0"
+          repeat="indefinite"></a-animation>
+        </a-image>
+      </a-entity>
     </a-link>
     <a-link href="https://mvp.microsoft.com/en-us/PublicProfile/5002483" position="0.45 0 -1" rotation="270 0 0" scale="0.25 0.25 0.25" geometry="primitive:circle;segments:64" material="shader:portal;side:double" link="">
-      <a-image src="#mvp" position="0 0 0.01" material="" geometry=""></a-image>
+      <a-entity position="0 0 0.5" rotation="90 0 0">
+        <a-image src="#mvp" position="0 0 0.01" material="" geometry="">
+        <a-animation attribute="rotation"
+        dur="10000"
+        fill="forwards"
+        to="0 360 0"
+        repeat="indefinite"></a-animation>
+      </a-image>
+    </a-entity>
     </a-link>
     <a-link href="https://twitter.com/rondagdag" position="0.75 0 0" rotation="270 0 0" scale="0.25 0.25 0.25" geometry="primitive:circle;segments:64" material="shader:portal;side:double" link="">
-      <a-image src="#twitter" position="0 0 0.01" material="" geometry=""></a-image>
+      <a-entity position="0 0 0.5" rotation="90 0 0">
+          <a-image src="#twitter" position="0 0 0.01" material="" geometry="">
+            <a-animation attribute="rotation"
+            dur="10000"
+            fill="forwards"
+            to="0 360 0"
+            repeat="indefinite"></a-animation>
+        </a-image>
+      </a-entity>
     </a-link>
     
     <a-marker-camera type='pattern' url='ron-marker.patt'></a-marker-camera>
