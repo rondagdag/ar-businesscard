@@ -5,9 +5,9 @@
 var express = require('express');
 var app = express();
 
-// we've started you off with Express, 
+// we've started you off with Express,
 // but feel free to use whatever libs or frameworks you'd like through `package.json`.
-
+var {PORT} = require('./Config')
 // http://expressjs.com/en/starter/static-files.html
 app.use(express.static('public'));
 //app.use(express.static(__dirname + '/public'));
@@ -35,6 +35,6 @@ app.use(express.static('public'));
 // ];
 
 // listen for requests :)
-var listener = app.listen(process.env.PORT, function () {
+var listener = app.listen(PORT, function () {
   console.log('Your app is listening on port ' + listener.address().port);
 });
